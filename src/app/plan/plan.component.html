@@ -1,4 +1,4 @@
-<div class="loginContainer">
+<div class="appContainer">
   <label for="selectedProduktas">Pasirinkite produktą, kuriam norite sukurti ribojimą</label>
   <select id="selectedProduktas" [(ngModel)]="ribojimas.produktasId">
     <option *ngFor="let produktas of produktai" [value]="produktas.id">{{ produktas.pavadinimas }}</option>

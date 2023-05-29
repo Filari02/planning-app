@@ -27,7 +27,6 @@ export class ReceptaiService {
   }
 
   public planForAWeek(ribojimai : RibojimasView[], asmuoId: number): Observable<ReceptasView[]> {
-    console.log(ribojimai);
     return this.httpClient.post<ReceptasView[]>(this.RECEPTAI_SERVER + "/plan/" + asmuoId, JSON.stringify(ribojimai), httpOptions);
   }
 

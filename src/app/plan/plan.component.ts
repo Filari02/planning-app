@@ -52,7 +52,6 @@ export class PlanComponent implements OnInit{
     this.ribojimai.push(r);
     const selectedProduktas = {pavadinimas: <string>this.produktai.find(p => p.id == this.ribojimas.produktasId)?.pavadinimas, kartai: this.ribojimas.timesPerWeek};
     this.selectedProduktai.push(selectedProduktas);
-    console.log(this.ribojimai)
 
   }
 
