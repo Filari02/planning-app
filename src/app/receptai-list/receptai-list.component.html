@@ -1,0 +1,10 @@
+
+<div class="container" *ngFor="let receptas of receptai">
+  <div class="name">
+    {{receptas.pavadinimas}}
+  </div>
+  <div>
+    {{receptas.aprasymas}}
+  </div>
+  <span *ngFor="let produktas of receptas.produktai">{{produktas}}</span>
+</div>

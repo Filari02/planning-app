@@ -1,0 +1,27 @@
+@import "src/styles.scss";
+
+.uploadInput {
+  @extend .loginInput;
+}
+
+.container {
+  @extend .loginContainer;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+textarea {
+  resize: none;
+  height: 200px;
+}
+
+select {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.deleteBtn {
+  width: 150px;
+  height: 30px;
+  padding: 0;
+}

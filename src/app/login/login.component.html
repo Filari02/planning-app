@@ -1,0 +1,16 @@
+ <form (ngSubmit)="onSubmit()">
+
+  <div class="loginContainer">
+    <label class="labelName">El. paštas</label>
+    <input class="loginInput" type="text" placeholder="Įveskit el. paštą" name="email" [(ngModel)]="form.email" required>
+
+    <label class="labelName">Slaptažodis</label>
+    <input class="loginInput" type="password" placeholder="Įveskite slaptažodį" name="psw" [(ngModel)]="form.password" required>
+    <button type="submit">Prisijungti</button>
+
+    <label class="labelName">
+      Reikia paskyros?
+      <a routerLink="/register">Registruotis</a>
+    </label>
+  </div>
+</form>

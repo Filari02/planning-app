@@ -1,0 +1,40 @@
+<div class="loginContainer">
+  <label for="selectedProduktas">Pasirinkite produktą, kuriam norite sukurti ribojimą</label>
+  <select id="selectedProduktas" [(ngModel)]="ribojimas.produktasId">
+    <option *ngFor="let produktas of produktai" [value]="produktas.id">{{ produktas.pavadinimas }}</option>
+  </select>
+
+  <div *ngIf="ribojimas.produktasId != 0">
+    <label for="timesPerWeek">Pasirinkite, kiek daugiausiai kartų norite valgyti šį produktą</label>
+    <select id="timesPerWeek" [(ngModel)]="ribojimas.timesPerWeek">
+      <option *ngFor="let times of timesPerWeek" [value]="times">{{ times }}</option>
+    </select>
+    <button class="addBtn" (click)="onProduktasSubmit($event)">Pridėti produktą</button>
+  </div>
+
+  <div *ngIf="selectedProduktai.length > 0" class="labelName">Produktai:</div>
+  <div *ngFor="let produktas of selectedProduktai">{{produktas.pavadinimas}} ne dažniau nei {{produktas.kartai}} kartus per savaitę.</div>
+  <button type="button" *ngIf="selectedProduktai.length > 0" class="deleteBtn" (click)="onProduktasReset($event)">Išvalyti produktus</button>
+
+  <div>
+    <button class="planBtn" (click)="onSubmit()">Sudaryti savaitės planą</button>
+  </div>
+</div>
+
+<div class="container" *ngIf="searchPerformed && receptai.length === 0">Plano pagal šiuos ribojimus sudaryti nepavyko.</div>
+
+<div *ngIf="searchPerformed && receptai.length !== 0">
+  <div class="container" *ngFor="let receptas of receptai">
+    <div class="name">
+      {{receptas.pavadinimas}}
+    </div>
+    <div>
+      {{receptas.aprasymas}}
+    </div>
+    <p *ngFor="let produktas of receptas.produktai">{{produktas}}</p>
+  </div>
+</div>
+
+
+
+

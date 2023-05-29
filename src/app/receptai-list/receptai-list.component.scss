@@ -1,0 +1,13 @@
+@import "src/styles.scss";
+
+.container {
+  @extend .loginContainer;
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-top: 30px;
+}
+
+span {
+  margin-right: 8px;
+  font-style: italic;
+}

@@ -1,0 +1,23 @@
+@import "src/styles.scss";
+
+.planBtn {
+  height: 40px;
+  width: 100%;
+
+}
+
+label {
+  margin-right: 8px;
+}
+
+button {
+  @extend .addBtn;
+  margin-left: 8px;
+}
+
+.container {
+  @extend .loginContainer;
+  margin-right: auto;
+  margin-left: auto;
+}
+

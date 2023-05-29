@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="loginContainer">
+    <label class="labelName">EL. paštas</label>
+    <input class="loginInput" type="text" placeholder="Įveskite el. paštą" name="email" [(ngModel)]="form.email" required>
+
+    <label class="labelName">Vardas</label>
+    <input class="loginInput" type="text" placeholder="Įveskit vardą" name="name" [(ngModel)]="form.name" required>
+
+    <label class="labelName">Slaptažodis</label>
+    <input class="loginInput" type="password" placeholder="Įveskit slaptažodį" name="psw" [(ngModel)]="form.password" required>
+
+    <label class="labelName">Slaptažodžio pakartojimas</label>
+    <input class="loginInput" type="password" placeholder="Pakartokite slaptažodį password" name="psw2" [(ngModel)]="form.password2" required>
+
+    <label class="errorMessage">{{errorMessage}}</label>
+    <label *ngIf="isSuccessful">Registracija sėkminga</label>
+    <button type="submit">Registruotis</button>
+  </div>
+</form>

@@ -1,0 +1,19 @@
+<form class="container" (ngSubmit)="onSubmit()">
+  <div>
+    <label class="labelName">Pavadinimas</label>
+    <input class="uploadInput" type="text" placeholder="Įveskite recepto pavadinimą" name="name" [(ngModel)]="receptasCreateView.pavadinimas" required>
+  </div>
+  <div>
+    <label class="labelName">Aprašymas</label>
+    <textarea class="uploadInput" placeholder="Įveskite aprašymą" name="name" [(ngModel)]="receptasCreateView.aprasymas" required> </textarea>
+  </div>
+  <label class="labelName">Pridėti poduktus</label>
+  <select [(ngModel)]="selectedProduktas" name="selectedProduktas">
+    <option *ngFor="let produktas of produktai" [value]="produktas.id">{{ produktas.pavadinimas }}</option>
+  </select>
+  <button type="button" class="addBtn" (click)="onProduktasSubmit($event)">Pridėti produktą</button>
+  <div *ngIf="selectedProduktai.length > 0" class="labelName">Produktai:</div>
+  <div *ngFor="let pavadinimas of selectedProduktai">{{pavadinimas}}</div>
+  <button type="button" *ngIf="selectedProduktai.length > 0" class="deleteBtn" (click)="onProduktasReset($event)">Išvalyti produktus</button>
+  <button type="submit">Pridėti receptą</button>
+</form>

@@ -1,0 +1,8 @@
+<div>
+  <a *ngIf="isLoggedIn.value" routerLink="/receptai-list">Peržiūrėti savo receptus</a>
+  <a *ngIf="isLoggedIn.value" routerLink="/plan">Sudaryti savaitės planą</a>
+  <a *ngIf="isLoggedIn.value" routerLink="/upload">Pridėti naują receptą</a>
+  <a *ngIf="!isLoggedIn.value" class="login" routerLink="/login">Prisijungti</a>
+  <a *ngIf="isLoggedIn.value" class="login" routerLink="/login">Atsijungti</a>
+</div>
+
